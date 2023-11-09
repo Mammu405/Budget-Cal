@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Friendly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/512px-User_icon-cp.svg.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js">
+      user=JSON.parse(localStorage.getItem('email'))
+change.innerHTML=`Welcome ${user.username}`;
+console.log(user.username);
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img src="https://e7.pngegg.com/pngimages/847/695/png-clipart-budget-finance-budget-text-logo.png" alt="" width="45px">
+          <a class="navbar-brand text-Dark ps-2 fs-4" href="#">Budget Breeze</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+              <button style="float: right;" class="btn btn-outline-dark" onclick="logout()" type="submit">Logout</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1 id="change" class="text-center mt-3">WELCOME</h1>
+        <div class="row mt-5 row1">
+            <div class="col-4 text-center media">
+                <div class="my-3 mt-4 form ">       
+                    <input type="text" class="form-control bg-light" id="a_des" placeholder="Enter Description">
+                  </div>
+                  <div class="my-3 form">
+                   
+                    <input type="text" class="form-control bg-light" id="a_amt" placeholder="Enter Amount">
+                  </div>
+                
+                  <button type="submit" class="btn btn-outline-success  button1 w-50 mt-4" onclick="Add()">ADD</button>
+            </div>
+            <div class="col-4 bg-light box text-center">
+                <h3 class="text-center mt-4">Your Savings</h3>
+                <div id="FullAmount">
+                  
+                </div>
+               
+            </div>
+            <div class="col-4 media text-center">
+                <div class="my-3 mt-4 form ps-4 ">       
+                    <input type="text" class="form-control bg-light" id="e_des" placeholder="Enter Description">
+                  </div>
+                  <div class="my-3 form ps-4 ">
+                   
+                    <input type="text" class="form-control bg-light" id="e_amt" placeholder="Enter Amount">
+                  </div>
+                
+                  <button type="submit" class="btn btn-outline-danger button1 w-50 mt-4" onclick="Expense()">ADD Expense</button>
+            </div>
+        </div>
+        <div class="row row1 mt-5">
+            <div class="col-6">
+                <h3 class="my-3" style=" color: rgb(56, 106, 89) ;">Income</h3>
+                <table class="table">
+                   
+                    <thead>
+                      <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody id="resultadd">
+                      <!-- <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-6">
+                <h3  class="my-3" style=" color: rgb(56, 106, 89) ;">Expense</h3>
+                <table class="table">
+                    
+                    <thead>
+                      <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody id="resultexp">
+                      <!-- <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
